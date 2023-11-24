@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile_Lookup_Project</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <script>
+    var contacts = [
+        {
+            "name": "Nora",
+            "lastName": "Nav",
+            "phone": "0543236543",
+            "likes": ["Pizza", "Programming"]
+        },
+
+        {
+            "name": "Harry",
+            "lastName": "Potter",
+            "phone": "0994372684",
+            "likes": ["Hogwats", "Magic"]
+        },
+
+        {
+            "name": "Sherlock",
+            "lastName": "Holmes",
+            "phone": "0487345643",
+            "likes": ["Interesting cases", "Violin"]
+        }
+    ]
+
+    function lookupProfile (name, property) {
+        for (var i =0; i < contacts.length; i++) {
+            if (contacts[i].name === name) {
+                return contacts[i][property] || "The property was not found"
+            }
+        }
+        return "The contact was not found or not included in the list"
+    }
+    console.log (lookupProfile ("Nora", "likes"));
+    console.log(lookupProfile("Harry", "likes"));
+    console.log(lookupProfile("Sherlock", "likes"));
+    console.log(lookupProfile("Nora", "adress")); //The property was not found
+    console.log(lookupProfile("Lenin", "likes"));//The contact was not found or not included in the list
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
